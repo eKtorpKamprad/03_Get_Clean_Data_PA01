@@ -120,7 +120,8 @@ createsTidy = function(dataset){
         message("      subject") 
         message("      > Calculating and saving average mean & std values...")
         dat     <- data.table(dataset)
-        tidy    <- dat[,lapply(.SD,mean),by="Activity,Subject"]
+        tidy    <- dat[,lapply(.SD,mean),by="Subject,Activity"]
+        tidy    <- tidy[order(tidy$Subject,tidy$Activity), ]
         tidy
 }
 
