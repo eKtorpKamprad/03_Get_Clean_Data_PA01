@@ -135,9 +135,9 @@ dat     <- setActivityNames(dat, path)
 dat     <- renameVariables(dat)
 tidy    <- createsTidy(dat) 
 
-
+dataset2Path    <- "Data Science Specialization/03_Get_Clean_Data_PA01"
 dataset2Name    <- "tidy.txt"
-dataset2        <- file.path(datasetPath,dataset2Name)
+dataset2        <- file.path(dataset2Path,dataset2Name)
 
 write.table(tidy,dataset2,sep=",",row.names=FALSE)
 message("      > Process Finished!")
